@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
@@ -21,7 +21,7 @@ if(Auth::check()){
 		}else{
 			$('.navbar').removeClass("sticky");
 		}
-	
+
 	});
 });
 </script>
@@ -42,9 +42,9 @@ if(Auth::check()){
       <li class="nav-item">
         <a class="nav-link active navlinkhover" href="/all">All Fashion</a>
       </li>
-      
-      
-   
+
+
+
 
       <li class="nav-item dropdown" style="position: static;">
         <a class="nav-link dropdown-toggle active " href="#" id="mega-one" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -78,7 +78,7 @@ if(Auth::check()){
                 <a href="#" class="dropdown-item">Wallets</a>
 
               </div>
-              
+
               <div class="col-sm-8 col-lg-2">
                 <h5>Bottom Wear</h5>
                 <a href="#" class="dropdown-item">Denims</a>
@@ -91,36 +91,36 @@ if(Auth::check()){
               </div>
               <div class="col-sm-8 col-lg-2">
                 <h5>Image</h5>
-                <img src="{{asset('img/catagory.jpg')}}" style="width: 100%;"> 
-              
+                <img src="{{asset('img/catagory.jpg')}}" style="width: 100%;">
+
               </div>
           </div>
 
         </div>
-      
-        
+
+
       </li>
-      
-       
- 
+
+
+
     </ul>
-    
-    <form class="form-inline my-2 my-lg-0" action="/search"> 
-    
+
+    <form class="form-inline my-2 my-lg-0" action="/search">
+
       <input name="query" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 250px;">
-      
+
       <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit">Search</button>
     </form>
-    
-    
-    <ul class="nav navbar-nav navbar-right "> 
+
+
+    <ul class="nav navbar-nav navbar-right ">
     @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link active" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link active" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -131,20 +131,21 @@ if(Auth::check()){
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-                                
+
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/myorders">Orders</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    
+
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                    <a class="dropdown-item" href="/myorders">Orders</a>
+
                                 </div>
                             </li>
                             <li ><a href="/cartlist" class="nav-link active navlinkhover"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

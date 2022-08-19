@@ -22,12 +22,12 @@
     <img class="detail-img" src="{{asset('upload/gallery/'.$product->gallery3)}}" alt="" >
     </li>
 
-    
+
   </div>
 </div>
 </div>
 <div class="col-sm-5 mt-5">
-      
+
         <!--Carousel Wrapper-->
 <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
   <!--Slides-->
@@ -53,17 +53,17 @@
   <ol class="">
 
 </div>
-  
+
     </div>
     <div class="col-sm-5 mt-5">
-        
+
         <h3 style="color: green;">{{$product['title']}}</h3>
         <h5> {{$product['category']}}</h5>
         <p>{{$product['description']}}</p>
         <h4>Rs : {{$product['price']}}.00</h4>
-        
+
         <br>
-        
+
         <br>
         <form action="/buynow/{{$product['id']}}" method="GET">
         @csrf
@@ -80,40 +80,40 @@
             <div class="row">
             <button class="btn btn-primary ml-4">Add to Cart</button>
             </div>
-       
-       
-        
+
+
+
         </form>
         </div>
-       
-      
-       
+
+
+
         <br><br>
     </div>
 
 
   </div>
 
-    
-    
+
+
 </div>
-<div class="container"> 
+<div class="container">
 <div class="mt-5">
   <h3>New Product</h3>
-  
+
 
   <div class="row ml-5 mt-5">
 @foreach ($new1->reverse()->slice(0,8) as $item)
   <div class="col-md-4 col-lg-3 col-xl-3 col-sm-6 mt-5">
-    
-    <a href="detail/{{$item['id']}}" class="mt-5"> 
-      <img src="{{asset('upload/gallery/'.$item->gallery1)}}" alt="" class="new-img mt-5" > 
 
-     
+    <a href="{{$item['id']}}" class="mt-5">
+      <img src="{{asset('upload/gallery/'.$item->gallery1)}}" alt="" class="new-img mt-5" >
+
+
     </a>
-    
+
   </div>
- 
+
   @endforeach
 
 </div>
