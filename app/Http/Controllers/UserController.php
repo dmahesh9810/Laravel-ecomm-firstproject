@@ -17,15 +17,15 @@ class UserController extends Controller
     // {
     //     $user = User::where(['mail'=>$req->mail])->first();
     //     $userId = Auth::id();
-        
+
     //     if(!$user || !Hash::check($req->password,$user->password))
     //     {
-            
+
     //         return "Username or password is not matched";
-                        
+
     //     }
     //     else{
-    //         $req->session()->put('user',$user);            
+    //         $req->session()->put('user',$user);
     //         return redirect('/');
     //     }
     // }
@@ -40,8 +40,8 @@ class UserController extends Controller
     //     // return $req->input();
     // if($req->password==$req->c_password)
     // {
-        
-        
+
+
 
     //         $user = new User;
     //         $user->name=$req->name;
@@ -50,7 +50,7 @@ class UserController extends Controller
     //         $user->save();
     //         return redirect('/login');
     // }
-    
+
     // else
     // return redirect('register');
     // }
@@ -58,7 +58,7 @@ class UserController extends Controller
 
     public function fbsubmit(){
         return Socialite::driver('facebook')->redirect();
-           
+
        }
 
 
@@ -71,14 +71,14 @@ class UserController extends Controller
         $user = User::where('email',$usr->email)->first();
         if($user){
 
-            
+
             // session::put('user',$user);
             Auth()->login($user);
 
-            
-          
+
+
             return redirect('/');
-          
+
 
         }
         else{
@@ -93,12 +93,12 @@ class UserController extends Controller
             return redirect('/');
 
         }
-       
+
     }
     //google strt
     public function googleSubmit(){
         return Socialite::driver('google')->redirect();
-           
+
        }
     public function googleRes()
        {
@@ -111,12 +111,12 @@ class UserController extends Controller
         $user = User::where('email',$usr->email)->first();
         if($user){
 
-            
+
             // session::put('user',$user);
             // Auth::attempt(['email' => $user]);
             Auth()->login($user);
             return redirect('/');
-          
+
 
         }
         else{
@@ -131,8 +131,8 @@ class UserController extends Controller
             return redirect('/');
 
         }
-       
+
     }
-    
-    
+
+
 }
